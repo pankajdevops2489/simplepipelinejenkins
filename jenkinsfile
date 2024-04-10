@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git checkout') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/pankajdevops2489/simplepipelinejenkins.git'
+            }
+        }
+        stage('List files') {
+            steps {
+                sh '''
+                    ls -lrtha
+                    pwd
+                  '''
+            }
+        }
+    }
+}
