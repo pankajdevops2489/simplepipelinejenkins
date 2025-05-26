@@ -17,7 +17,7 @@ jobs:
       - run: echo "⚙️ Provisioning testing infrastructure for Application One."
   dockerise:
     needs: build
-    uses: outofdevops/application-one/.github/workflows/call_k8s.yaml@main
+    uses: pankajdevops2489/reusableworkflows/.github/workflows/call_k8s.yaml@main
     with:
       image: "application-one"
   end-2-end:
