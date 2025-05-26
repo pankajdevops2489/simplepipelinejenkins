@@ -10,7 +10,7 @@ jobs:
     needs: build
     uses: pankajdevops2489/reusableworkflows/.github/workflows/call_docker.yml@main
     with:
-      run-name: "Static Application Security Testing for Application-One" 
+      image: "docekr-image" 
   provision-infra:
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,7 @@ jobs:
     needs: build
     uses: pankajdevops2489/reusableworkflows/.github/workflows/call_k8s.yaml@main
     with:
-      image: "application-one"
+      image: "k8s-image"
   end-2-end:
     runs-on: ubuntu-latest
     needs:
